@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptimumWellness72 | Life, Health & Performance Coaching Central Scotland</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: {
+                            950: '#090203',
+                            900: '#110507',
+                            800: '#1c080b',
+                            700: '#2c0e13'
+                        },
+                        ruby: {
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                            950: '#450a0a'
+                        },
+                        gold: {
+                            400: '#facc15',
+                            500: '#eab308'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #090203;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Cinzel', serif;
+        }
+        .ruby-gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #f87171 50%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ruby-glow {
+            box-shadow: 0 0 35px -5px rgba(220, 38, 38, 0.35);
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 25px -3px rgba(220, 38, 38, 0.25);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090203;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #450a0a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7f1d1d;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-ruby-600 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-ruby-950 via-ruby-900 to-ruby-950 text-slate-200 text-xs py-2 px-4 border-b border-ruby-800/40">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-ruby-500 animate-pulse"></span>
+                <span>Exclusive Face-to-Face Coaching across Central Scotland (Edinburgh, Stirling, Falkirk, Lothian)</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:Optimumwellness72@gmail.com" class="hover:text-ruby-300 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-ruby-400"></i> Optimumwellness72@gmail.com
+                </a>
+                <span class="hidden md:inline text-ruby-700">|</span>
+                <span class="hidden md:inline font-semibold text-ruby-400">Strict 30 Client Capacity</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-40 bg-darkbg-950/90 backdrop-blur-md border-b border-ruby-950/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-ruby-600 to-ruby-900 flex items-center justify-center text-white font-bold text-xl shadow-lg border border-ruby-500/30 group-hover:scale-105 transition-transform">
+                    O
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-extrabold tracking-tight text-white group-hover:text-ruby-300 transition-colors">
+                        OptimumWellness<sup class="text-ruby-400 text-xs font-bold font-sans">72</sup>
+                    </span>
+                    <span class="text-[10px] tracking-widest uppercase text-slate-400 font-medium">Life • Health • Performance</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#philosophy" class="hover:text-ruby-400 transition-colors">6-Month Blueprint</a>
+                <a href="#calculator" class="hover:text-ruby-400 transition-colors">Subscription Builder</a>
+                <a href="#deliverables" class="hover:text-ruby-400 transition-colors">PT Framework</a>
+                <a href="#credentials" class="hover:text-ruby-400 transition-colors">Credentials</a>
+                <a href="#coverage" class="hover:text-ruby-400 transition-colors">Location Coverage</a>
+            </div>
+
+            <!-- CTA Button -->
+            <button onclick="openBookingModal()" class="bg-gradient-to-r from-ruby-600 to-ruby-700 hover:from-ruby-500 hover:to-ruby-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg border border-ruby-400/30 transition-all hover:scale-105 text-sm flex items-center gap-2">
+                <span>Book Consultation</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ruby-900/20 blur-[140px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ruby-950/80 border border-ruby-800/60 text-ruby-300 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-location-dot text-ruby-500"></i> Face-to-Face Coaching • Central Scotland
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
+                        Transform Your Physical Health, Purpose & <span class="ruby-gradient-text">Life Performance</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+                        A bespoke, face-to-face subscription model built on a <strong>modular building-block approach</strong>. Seamlessly integrating Registered Life Planning, Level 3 Personal Training, and Level 4 Precision Performance Nutrition.
+                    </p>
+
+                    <!-- Core Value Pills -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+                        <div class="bg-darkbg-900 border border-ruby-900/60 rounded-xl px-3.5 py-2 text-xs font-medium text-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-compass text-ruby-400"></i> Registered Life Planner (RLP®)
+                        </div>
+                        <div class="bg-darkbg-900 border border-ruby-900/60 rounded-xl px-3.5 py-2 text-xs font-medium text-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-dumbbell text-ruby-400"></i> Level 3 Personal Trainer
+                        </div>
+                        <div class="bg-darkbg-900 border border-ruby-900/60 rounded-xl px-3.5 py-2 text-xs font-medium text-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-apple-whole text-ruby-400"></i> Level 4 Weight & Athletic Nutrition
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#calculator" class="w-full sm:w-auto bg-gradient-to-r from-ruby-600 to-ruby-800 hover:from-ruby-500 hover:to-ruby-700 text-white font-semibold px-8 py-4 rounded-xl shadow-xl border border-ruby-500/30 transition-all text-center hover:scale-[1.02]">
+                            Build Your Subscription
+                        </a>
+                        <a href="#philosophy" class="w-full sm:w-auto bg-darkbg-900 hover:bg-darkbg-800 text-slate-300 hover:text-white font-semibold px-6 py-4 rounded-xl border border-ruby-900/60 transition-all text-center">
+                            Why a 6-Month Journey?
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual: Client Capacity Barometer Card -->
+                <div class="lg:col-span-5">
+                    <div class="p-8 rounded-3xl bg-darkbg-900 border border-ruby-900/80 shadow-2xl relative overflow-hidden ruby-glow">
+                        <div class="absolute top-0 right-0 bg-ruby-600 text-white text-[10px] uppercase tracking-widest font-bold px-4 py-1.5 rounded-bl-2xl">
+                            Strict Client Cap
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-white">30 Client Annual Limit</h3>
+                                <p class="text-xs text-slate-400 mt-1">To ensure true 1-to-1 relationship depth and high accountability, intake is strictly capped across Central Scotland.</p>
+                            </div>
+
+                            <!-- Live Visual Barometer -->
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold">
+                                    <span class="text-slate-300">Active Client Intake Status</span>
+                                    <span class="text-ruby-400">22 / 30 Slots Filled</span>
+                                </div>
+                                <div class="w-full h-3 bg-darkbg-950 rounded-full overflow-hidden border border-ruby-900/50">
+                                    <div class="h-full bg-gradient-to-r from-ruby-600 to-ruby-400 rounded-full w-[73%] transition-all duration-1000"></div>
+                                </div>
+                                <p class="text-[11px] text-slate-400 italic text-right">8 Face-to-Face Openings Remaining</p>
+                            </div>
+
+                            <div class="border-t border-ruby-900/40 pt-6 space-y-3">
+                                <div class="flex items-start gap-3 text-xs text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-ruby-400 mt-0.5"></i>
+                                    <span>High-frequency 1-to-1 face-to-face coaching sessions</span>
+                                </div>
+                                <div class="flex items-start gap-3 text-xs text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-ruby-400 mt-0.5"></i>
+                                    <span>Comprehensive EVOKE® Life Planning integration</span>
+                                </div>
+                                <div class="flex items-start gap-3 text-xs text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-ruby-400 mt-0.5"></i>
+                                    <span>Direct phone/messaging access directly with your mentor</span>
+                                </div>
+                            </div>
+
+                            <button onclick="openBookingModal()" class="w-full bg-darkbg-800 hover:bg-ruby-900/60 border border-ruby-600/50 text-white font-semibold py-3 rounded-xl transition-all text-xs tracking-wide uppercase flex items-center justify-center gap-2">
+                                <span>Apply for an Intake Slot</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6-Month Contract Rationale & Philosophy Section -->
+    <section id="philosophy" class="py-16 bg-gradient-to-b from-darkbg-950 via-darkbg-900 to-darkbg-950 border-y border-ruby-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-ruby-400">The Minimum 6-Month Commitment</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Why Meaningful Change Requires Time</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Quick fixes and 30-day challenges create temporary spikes, not lasting transformation. At <strong>OptimumWellness<sup>72</sup></strong>, every membership is structured with a <strong>minimum 6-month contract</strong> to allow for deep habit formation, biomechanical adaptation, and lifestyle alignment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="p-6 rounded-2xl bg-darkbg-950 border border-ruby-900/40 hover:border-ruby-600/60 transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-ruby-900/30 text-ruby-400 flex items-center justify-center text-xl font-bold border border-ruby-700/30">
+                        1-2
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Months 1–2: Foundation & Baseline</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Establishing biomechanical baselines, conducting initial EVOKE® Life Planning sessions, calibrating nutritional habits, and setting safe exercise mechanics.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkbg-950 border border-ruby-900/40 hover:border-ruby-600/60 transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-ruby-900/30 text-ruby-400 flex items-center justify-center text-xl font-bold border border-ruby-700/30">
+                        3-4
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Months 3–4: Momentum & Progression</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Overcoming initial friction, increasing physical workload, refining nutritional macros for performance, and resolving lifestyle roadblocks.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkbg-950 border border-ruby-900/40 hover:border-ruby-600/60 transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-ruby-900/30 text-ruby-400 flex items-center justify-center text-xl font-bold border border-ruby-700/30">
+                        5-6
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Months 5–6: Autonomy & Mastery</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Embedding permanent behavioral habits, achieving target physical milestones, and fully integrating life plans into daily Central Scotland routines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Building Block Subscription Calculator -->
+    <section id="calculator" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-ruby-400">Custom Subscription Builder</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Assemble Your Coaching Building Blocks</h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    Select the tailored components that match your specific goals. Prices are calculated dynamically with your minimum 6-month contract investment clear upfront.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Left: Building Blocks Selection Form (8 cols) -->
+                <div class="lg:col-span-8 space-y-6">
+
+                    <!-- Building Block 1: Optional Life Planning -->
+                    <div class="p-6 rounded-2xl bg-darkbg-900 border border-ruby-900/60 hover:border-ruby-600/60 transition-all relative">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-ruby-900/40 text-ruby-400 flex items-center justify-center font-bold text-lg border border-ruby-700/40">
+                                    1
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <h3 class="text-lg font-bold text-white">Registered Life Planning (EVOKE® Process)</h3>
+                                        <span class="bg-ruby-950 text-ruby-300 text-[10px] font-semibold px-2 py-0.5 rounded border border-ruby-800">Optional</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400 mt-0.5">Comprehensive life planning, priority alignment & long-term vision architecture.</p>
+                                </div>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="block-life-planning" onchange="calculateSubscription()" class="sr-only peer" checked>
+                                <div class="w-11 h-6 bg-darkbg-950 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-ruby-600"></div>
+                            </label>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-ruby-950 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs gap-2">
+                            <div class="text-slate-300">
+                                <span class="font-bold text-white">Upfront Fee: £500</span> (Initial Intensive Discovery & Plan Blueprint)
+                            </div>
+                            <div class="text-ruby-400 font-bold">
+                                + £60 / month (Ongoing Strategy & Execution)
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Building Block 2: Personal Training (Multi-Session Options) -->
+                    <div class="p-6 rounded-2xl bg-darkbg-900 border border-ruby-900/60 hover:border-ruby-600/60 transition-all">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-ruby-900/40 text-ruby-400 flex items-center justify-center font-bold text-lg border border-ruby-700/40">
+                                    2
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">1-to-1 Personal Training (Level 3 PT)</h3>
+                                    <p class="text-xs text-slate-400">Individual sessions at standard £60 rate; discounted in monthly subscription packages.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Included PT Key Deliverables -->
+                        <div class="mt-4 p-4 rounded-xl bg-darkbg-950 border border-ruby-950 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-ruby-400 mt-0.5 shrink-0"></i>
+                                <span><strong>Mobility & Fitness Assessment:</strong> Baseline biomechanics & joints.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-ruby-400 mt-0.5 shrink-0"></i>
+                                <span><strong>Goal Prioritisation:</strong> Tailored roadmap aligning short & long targets.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-ruby-400 mt-0.5 shrink-0"></i>
+                                <span><strong>Nutritional Profiling:</strong> Broad calories & macros for performance.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-ruby-400 mt-0.5 shrink-0"></i>
+                                <span><strong>Independent Workouts:</strong> Programmed routines outside 1:1 sessions.</span>
+                            </div>
+                        </div>
+
+                        <!-- PT Option Choices -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
+                            <!-- Option A: 2 Sessions / Month -->
+                            <label class="cursor-pointer">
+                                <input type="radio" name="pt_sessions" value="115" onchange="calculateSubscription()" class="peer sr-only">
+                                <div class="p-3.5 rounded-xl bg-darkbg-950 border border-ruby-950 peer-checked:border-ruby-500 peer-checked:bg-ruby-950/40 transition-all text-center h-full flex flex-col justify-between">
+                                    <div class="text-xs font-bold text-slate-300">2 Sessions / Mo</div>
+                                    <div class="text-lg font-extrabold text-white my-1">£115<span class="text-xs font-normal text-slate-400">/mo</span></div>
+                                    <div class="text-[10px] text-ruby-400 font-semibold">£57.50 / Session</div>
+                                </div>
+                            </label>
+
+                            <!-- Option B: 1 Session / Week (Default) -->
+                            <label class="cursor-pointer">
+                                <input type="radio" name="pt_sessions" value="220" onchange="calculateSubscription()" class="peer sr-only" checked>
+                                <div class="p-3.5 rounded-xl bg-darkbg-950 border border-ruby-950 peer-checked:border-ruby-500 peer-checked:bg-ruby-950/40 transition-all text-center h-full flex flex-col justify-between relative">
+                                    <span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-ruby-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">POPULAR</span>
+                                    <div class="text-xs font-bold text-slate-300">1x / Week (4/mo)</div>
+                                    <div class="text-lg font-extrabold text-white my-1">£220<span class="text-xs font-normal text-slate-400">/mo</span></div>
+                                    <div class="text-[10px] text-ruby-400 font-semibold">£55.00 / Session</div>
+                                </div>
+                            </label>
+
+                            <!-- Option C: 2 Sessions / Week -->
+                            <label class="cursor-pointer">
+                                <input type="radio" name="pt_sessions" value="400" onchange="calculateSubscription()" class="peer sr-only">
+                                <div class="p-3.5 rounded-xl bg-darkbg-950 border border-ruby-950 peer-checked:border-ruby-500 peer-checked:bg-ruby-950/40 transition-all text-center h-full flex flex-col justify-between">
+                                    <div class="text-xs font-bold text-slate-300">2x / Week (8/mo)</div>
+                                    <div class="text-lg font-extrabold text-white my-1">£400<span class="text-xs font-normal text-slate-400">/mo</span></div>
+                                    <div class="text-[10px] text-ruby-400 font-semibold">£50.00 / Session</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Building Block 3: Precision Nutrition -->
+                    <div class="p-6 rounded-2xl bg-darkbg-900 border border-ruby-900/60 hover:border-ruby-600/60 transition-all">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-ruby-900/40 text-ruby-400 flex items-center justify-center font-bold text-lg border border-ruby-700/40">
+                                    3
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Level 4 Precision Performance Nutrition</h3>
+                                    <p class="text-xs text-slate-400">Advanced body composition, weight management & athletic fueling protocols.</p>
+                                </div>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="block-nutrition" value="75" onchange="calculateSubscription()" class="sr-only peer" checked>
+                                <div class="w-11 h-6 bg-darkbg-950 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-ruby-600"></div>
+                            </label>
+                        </div>
+                        <div class="mt-3 text-xs text-ruby-400 font-bold text-right">
+                            + £75 / month
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: Summary & Dynamic Cost Breakdown Panel (4 cols) -->
+                <div class="lg:col-span-4">
+                    <div class="p-6 rounded-3xl bg-darkbg-900 border border-ruby-600/60 shadow-2xl sticky top-28 ruby-glow space-y-6">
+                        <div class="border-b border-ruby-900/60 pb-4">
+                            <h3 class="font-serif text-xl font-bold text-white">Investment Breakdown</h3>
+                            <p class="text-xs text-slate-400">Dynamic summary based on your selections</p>
+                        </div>
+
+                        <!-- Target Range Barometer -->
+                        <div class="space-y-2 bg-darkbg-950 p-3.5 rounded-xl border border-ruby-950">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-400">Target Range (£200 - £400/mo)</span>
+                                <span id="range-status" class="text-ruby-400 font-bold">Within Target</span>
+                            </div>
+                            <div class="w-full h-2 bg-darkbg-900 rounded-full overflow-hidden">
+                                <div id="price-meter" class="h-full bg-gradient-to-r from-ruby-600 to-ruby-400 transition-all duration-300" style="width: 70%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Key Totals -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-300">Upfront Investment:</span>
+                                <span id="calculated-upfront" class="text-xl font-extrabold text-white">£500</span>
+                            </div>
+                            <p id="upfront-desc" class="text-[11px] text-slate-400 italic -mt-2">Includes EVOKE® Initial Life Planning Discovery</p>
+
+                            <div class="flex justify-between items-center text-sm pt-2 border-t border-ruby-950">
+                                <span class="text-slate-300">Monthly Subscription:</span>
+                                <span id="calculated-total" class="text-2xl font-extrabold text-ruby-400">£355</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl bg-ruby-950/50 border border-ruby-900 text-xs space-y-1">
+                                <div class="flex justify-between font-bold text-slate-200">
+                                    <span>6-Month Minimum Contract Total:</span>
+                                    <span id="six-month-total" class="text-white">£2,630</span>
+                                </div>
+                                <p class="text-[10px] text-slate-400">Includes upfront fee + 6 monthly payments.</p>
+                            </div>
+                        </div>
+
+                        <!-- Selected Inclusions Checklist -->
+                        <div class="space-y-2 text-xs border-t border-ruby-900/60 pt-4">
+                            <span class="font-bold text-slate-300 uppercase tracking-wider text-[10px]">Included Components:</span>
+                            <ul id="summary-list" class="space-y-1.5 text-slate-300">
+                                <!-- Dynamic list generated via JS -->
+                            </ul>
+                        </div>
+
+                        <button onclick="openBookingModal()" class="w-full bg-gradient-to-r from-ruby-600 to-ruby-700 hover:from-ruby-500 hover:to-ruby-600 text-white font-bold py-4 rounded-xl transition-all shadow-xl text-sm flex items-center justify-center gap-2">
+                            <span>Proceed to Consultation Application</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <p class="text-[10px] text-slate-400 text-center">No payment taken now. Intake subject to availability.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Personal Training Deliverables Feature Grid -->
+    <section id="deliverables" class="py-16 bg-darkbg-900/60 border-y border-ruby-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-ruby-400 block mb-2">Level 3 PT Framework</span>
+                <h2 class="text-3xl font-serif font-bold text-white">Included in Every 1-to-1 PT Package</h2>
+                <p class="text-slate-400 mt-2 text-xs sm:text-sm">Personal coaching going beyond the gym floor to give you a complete system for success.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-darkbg-950 border border-ruby-900/40 hover:border-ruby-600/60 transition-all space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-ruby-900/40 text-ruby-400 flex items-center justify-center text-lg font-bold border border-ruby-700/30">
+                        <i class="fa-solid fa-arrows-to-eye"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-sm">1. Mobility & Fitness Assessment</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Thorough initial baseline evaluation analyzing movement patterns, joint flexibility, postural alignment, cardiovascular stamina, and core strength.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkbg-950 border border-ruby-900/40 hover:border-ruby-600/60 transition-all space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-ruby-900/40 text-ruby-400 flex items-center justify-center text-lg font-bold border border-ruby-700/30">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-sm">2. Goal & Objective Tailoring</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Structuring clear, prioritised objectives so short-term physical milestones feed seamlessly into long-term lifestyle aspirations.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkbg-950 border border-ruby-900/40 hover:border-ruby-600/60 transition-all space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-ruby-900/40 text-ruby-400 flex items-center justify-center text-lg font-bold border border-ruby-700/30">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-sm">3. Broad Nutritional Profiling</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Establishing macro and calorie requirements customized to your metabolic rate, energy output, and body composition targets.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-darkbg-950 border border-ruby-900/40 hover:border-ruby-600/60 transition-all space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-ruby-900/40 text-ruby-400 flex items-center justify-center text-lg font-bold border border-ruby-700/30">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-sm">4. Independent Workout Program</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Bespoke training routines designed specifically for your solo workouts, ensuring continuous progress between face-to-face sessions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder & Credentials Section -->
+    <section id="credentials" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 relative">
+                    <div class="aspect-square rounded-3xl bg-gradient-to-br from-ruby-950 via-darkbg-900 to-ruby-900 border border-ruby-800/60 p-8 flex flex-col justify-between shadow-2xl">
+                        <div class="w-16 h-16 rounded-2xl bg-ruby-600/20 text-ruby-400 flex items-center justify-center text-3xl border border-ruby-500/30">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold uppercase tracking-widest text-ruby-400">Founder & Performance Director</span>
+                            <h3 class="text-2xl font-serif font-bold text-white">Registered Life Planner & Master Trainer</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">Blending life architecture with elite physical conditioning across Central Scotland.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-ruby-400">Accredited Credentials</span>
+                    <h2 class="text-3xl font-serif font-bold text-white">Qualified Across Every Pillar of Human Performance</h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-darkbg-900 border border-ruby-900/50 flex items-start gap-3">
+                            <i class="fa-solid fa-certificate text-ruby-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Registered Life Planner (RLP®)</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">EVOKE® methodology for life roadmap design.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-darkbg-900 border border-ruby-900/50 flex items-start gap-3">
+                            <i class="fa-solid fa-award text-ruby-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Level 4 Precision Nutrition</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Weight management & athletic performance.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-darkbg-900 border border-ruby-900/50 flex items-start gap-3">
+                            <i class="fa-solid fa-dumbbell text-ruby-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Level 3 Personal Trainer</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Advanced exercise prescription & biomechanics.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-darkbg-900 border border-ruby-900/50 flex items-start gap-3">
+                            <i class="fa-solid fa-heart-pulse text-ruby-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Level 2 Gym Instructor</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Core physical fitness & exercise safety.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Coverage Section -->
+    <section id="coverage" class="py-16 bg-gradient-to-b from-darkbg-950 to-darkbg-900 border-t border-ruby-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-ruby-400">Central Scotland Reach</span>
+            <h2 class="text-3xl font-serif font-bold text-white">Face-to-Face Locations</h2>
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto">Providing high-touch face-to-face personal training and life planning sessions across key Central Scotland hubs.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <div class="px-5 py-3 rounded-xl bg-darkbg-900 border border-ruby-900 text-slate-200 font-semibold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-location-pin text-ruby-400"></i> Edinburgh City & Lothians
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-darkbg-900 border border-ruby-900 text-slate-200 font-semibold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-location-pin text-ruby-400"></i> Stirling & Stirlingshire
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-darkbg-900 border border-ruby-900 text-slate-200 font-semibold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-location-pin text-ruby-400"></i> Falkirk & Stirlingshire Region
+                </div>
+                <div class="px-5 py-3 rounded-xl bg-darkbg-900 border border-ruby-900 text-slate-200 font-semibold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-location-pin text-ruby-400"></i> West Lothian & Midlothian
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkbg-950 border-t border-ruby-950 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-ruby-600 flex items-center justify-center text-white font-bold text-sm">O</div>
+                <span class="font-serif font-bold text-white text-base">OptimumWellness<sup>72</sup></span>
+            </div>
+            
+            <p>© 2026 OptimumWellness72. All rights reserved. Central Scotland Coaching Practice.</p>
+
+            <a href="mailto:Optimumwellness72@gmail.com" class="text-ruby-400 hover:underline">
+                Optimumwellness72@gmail.com
+            </a>
+        </div>
+    </footer>
+
+    <!-- Interactive Consultation Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkbg-900 border border-ruby-600/60 rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="space-y-4">
+                <div class="border-b border-ruby-900/60 pb-3">
+                    <span class="text-xs font-bold text-ruby-400 uppercase tracking-wider">Face-to-Face Intake</span>
+                    <h3 class="text-2xl font-serif font-bold text-white">Apply for Coaching Slot</h3>
+                </div>
+
+                <!-- Package Summary Passed from Calculator -->
+                <div class="p-4 rounded-xl bg-darkbg-950 border border-ruby-900 text-xs space-y-1">
+                    <div class="text-slate-400 font-bold uppercase text-[10px]">Your Configured Package:</div>
+                    <div class="flex justify-between font-bold text-white">
+                        <span>Upfront Discovery Fee:</span>
+                        <span id="modal-upfront" class="text-ruby-400">£500</span>
+                    </div>
+                    <div class="flex justify-between font-bold text-white">
+                        <span>Monthly Subscription:</span>
+                        <span id="modal-monthly" class="text-ruby-400">£355/mo</span>
+                    </div>
+                    <div class="text-[10px] text-slate-400 mt-1 pt-1 border-t border-ruby-950">
+                        Minimum 6-month contract applies. Directly submitted to <strong>Optimumwellness72@gmail.com</strong>
+                    </div>
+                </div>
+
+                <form onsubmit="handleModalSubmit(event)" class="space-y-4 pt-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Full Name *</label>
+                            <input type="text" required class="w-full bg-darkbg-950 border border-ruby-900 rounded-xl p-3 text-white text-xs focus:outline-none focus:border-ruby-500" placeholder="e.g. John Campbell">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Email Address *</label>
+                            <input type="email" required class="w-full bg-darkbg-950 border border-ruby-900 rounded-xl p-3 text-white text-xs focus:outline-none focus:border-ruby-500" placeholder="john@example.co.uk">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Preferred Location</label>
+                            <select class="w-full bg-darkbg-950 border border-ruby-900 rounded-xl p-3 text-white text-xs focus:outline-none focus:border-ruby-500">
+                                <option>Edinburgh & Lothians</option>
+                                <option>Stirling & Stirlingshire</option>
+                                <option>Falkirk</option>
+                                <option>West / Midlothian</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Phone Number *</label>
+                            <input type="tel" required class="w-full bg-darkbg-950 border border-ruby-900 rounded-xl p-3 text-white text-xs focus:outline-none focus:border-ruby-500" placeholder="07123 456789">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Key Goals or Questions</label>
+                        <textarea rows="3" class="w-full bg-darkbg-950 border border-ruby-900 rounded-xl p-3 text-white text-xs focus:outline-none focus:border-ruby-500" placeholder="Briefly describe what you wish to achieve over the next 6 months..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-ruby-600 to-ruby-700 hover:from-ruby-500 hover:to-ruby-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-xl text-xs uppercase tracking-wider">
+                        Submit Application to Optimumwellness72@gmail.com
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables for calculator state
+        let lifePlanningActive = true;
+        let currentUpfront = 500;
+        let baseLifeMonthly = 60;
+        let ptMonthly = 220;
+        let ptSessionsText = "1 Session / week (4 sessions/mo @ £55)";
+        let nutritionMonthly = 75;
+
+        // Dynamic Subscription Calculator Function
+        function calculateSubscription() {
+            // Check optional Life Planning block
+            const lifeCheck = document.getElementById('block-life-planning');
+            lifePlanningActive = lifeCheck.checked;
+
+            if (lifePlanningActive) {
+                currentUpfront = 500;
+                baseLifeMonthly = 60;
+                document.getElementById('upfront-desc').innerText = "Includes EVOKE® Initial Life Planning Discovery";
+            } else {
+                currentUpfront = 0;
+                baseLifeMonthly = 0;
+                document.getElementById('upfront-desc').innerText = "No Upfront Fee (Life Planning Omitted)";
+            }
+
+            // Get PT Selection
+            const ptRadios = document.getElementsByName('pt_sessions');
+            for (let radio of ptRadios) {
+                if (radio.checked) {
+                    ptMonthly = parseInt(radio.value);
+                    switch(ptMonthly) {
+                        case 115:
+                            ptSessionsText = "2 Sessions / month (Bi-weekly @ £57.50)";
+                            break;
+                        case 220:
+                            ptSessionsText = "1 Session / week (4 sessions/mo @ £55)";
+                            break;
+                        case 400:
+                            ptSessionsText = "2 Sessions / week (8 sessions/mo @ £50)";
+                            break;
+                        default:
+                            ptSessionsText = "1 Session / week (4 sessions/mo @ £55)";
+                    }
+                    break;
+                }
+            }
+
+            // Get Precision Nutrition Selection
+            const nutritionCheck = document.getElementById('block-nutrition');
+            nutritionMonthly = nutritionCheck.checked ? parseInt(nutritionCheck.value) : 0;
+
+            // Compute Totals
+            const totalMonthly = baseLifeMonthly + ptMonthly + nutritionMonthly;
+            const sixMonthTotal = currentUpfront + (totalMonthly * 6);
+
+            // Update UI Totals
+            document.getElementById('calculated-upfront').innerText = '£' + currentUpfront;
+            document.getElementById('calculated-total').innerText = '£' + totalMonthly;
+            document.getElementById('six-month-total').innerText = '£' + sixMonthTotal.toLocaleString('en-GB');
+
+            // Update Target Meter Position (Range £0 - £600 mapped to 0% - 100%)
+            const maxMonthly = 550;
+            const percentage = Math.min(100, Math.max(5, (totalMonthly / maxMonthly) * 100));
+            document.getElementById('price-meter').style.width = percentage + '%';
+
+            // Update Status Indicator
+            const statusEl = document.getElementById('range-status');
+            if (totalMonthly >= 200 && totalMonthly <= 400) {
+                statusEl.innerText = "Within Target (£200–£400)";
+                statusEl.className = "text-ruby-400 font-bold";
+            } else if (totalMonthly < 200) {
+                statusEl.innerText = "Entry Subscription";
+                statusEl.className = "text-amber-400 font-bold";
+            } else {
+                statusEl.innerText = "High-Intensity Performance";
+                statusEl.className = "text-ruby-300 font-bold";
+            }
+
+            // Update Inclusions List
+            const listEl = document.getElementById('summary-list');
+            listEl.innerHTML = '';
+
+            if (lifePlanningActive) {
+                listEl.innerHTML += `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-ruby-400"></i> EVOKE® Initial Life Discovery (£500 Upfront)</li>`;
+                listEl.innerHTML += `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-ruby-400"></i> Ongoing Life Strategy (+£60/mo)</li>`;
+            }
+
+            if (ptMonthly > 0) {
+                listEl.innerHTML += `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-ruby-400"></i> ${ptSessionsText} (+£${ptMonthly}/mo)</li>`;
+                listEl.innerHTML += `<li class="flex items-center gap-2 pl-4 text-[10px] text-slate-400"><i class="fa-solid fa-angle-right text-ruby-500"></i> Includes Assessment, Goals, Macros & Workouts</li>`;
+            }
+
+            if (nutritionMonthly > 0) {
+                listEl.innerHTML += `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-ruby-400"></i> Level 4 Precision Nutrition (+£75/mo)</li>`;
+            }
+
+            // Update Modal Pre-fill values
+            document.getElementById('modal-upfront').innerText = '£' + currentUpfront;
+            document.getElementById('modal-monthly').innerText = '£' + totalMonthly + '/mo';
+        }
+
+        // Modal Open / Close Functions
+        function openBookingModal() {
+            calculateSubscription();
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Handle Application Submission
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for submitting your consultation request! We have logged your selected package preferences and will contact you directly at Optimumwellness72@gmail.com within 24 hours.');
+            closeBookingModal();
+        }
+
+        // Trigger initial calculation on page load
+        window.onload = function() {
+            calculateSubscription();
+        };
+    </script>
+</body>
+</html>
