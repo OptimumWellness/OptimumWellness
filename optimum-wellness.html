@@ -1,0 +1,993 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimum Wellness | Life Visioning, PT & Level 4 Nutrition</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0f12;
+            --bg-secondary: #12191e;
+            --bg-card: #182228;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #d4af37;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-subtle: rgba(197, 160, 89, 0.2);
+            --border-strong: rgba(197, 160, 89, 0.4);
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-logo {
+            font-family: var(--font-heading);
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .gold-text {
+            color: var(--accent-gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 15, 18, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .brand-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: #0a0f12;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid var(--accent-gold);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            border-color: var(--accent-gold-hover);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .badge-capacity {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid var(--border-subtle);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #22c55e;
+        }
+
+        .hero {
+            padding-top: 10rem;
+            padding-bottom: 6rem;
+            position: relative;
+            background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.05), transparent 50%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        .hero-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .hero-card-header {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tier-price-box {
+            background: rgba(10, 15, 18, 0.6);
+            padding: 1.25rem;
+            border-radius: 6px;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            margin: 1.5rem 0;
+        }
+
+        .price-large {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: var(--font-heading);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .feature-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .feature-list li i {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+
+        .commitment-box {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #1c272e 100%);
+            border: 1px solid var(--border-strong);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .commitment-item {
+            background-color: rgba(10, 15, 18, 0.5);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .commitment-item h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .calc-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .calc-controls {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .calc-btn {
+            flex: 1;
+            padding: 1rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .calc-btn.active {
+            background-color: rgba(197, 160, 89, 0.15);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .calc-result-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            background: rgba(10, 15, 18, 0.8);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .result-val {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+        }
+
+        .result-lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-strong);
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .close-modal:hover {
+            color: var(--accent-gold);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .disclaimer-box {
+            background-color: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .disclaimer-box h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #06090b;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.85rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .alert-box {
+            display: none;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid #22c55e;
+            color: #22c55e;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .grid-3, .grid-2, .commitment-grid, .calc-result-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .calc-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <i class="fa-solid fa-compass gold-text"></i> OPTIMUM WELLNESS
+            </a>
+            <ul class="nav-links">
+                <li><a href="#concept">The Concept</a></li>
+                <li><a href="#services">Service Menu</a></li>
+                <li><a href="#rationale">6-Month Rationale</a></li>
+                <li><a href="#disclaimer">Compliance</a></li>
+                <li><button class="btn-gold" onclick="openModal('General Application')">Apply Now</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="badge-capacity">
+                        <span class="status-dot"></span> Central Scotland Private Studio | Strictly Capped Intake
+                    </div>
+                    <h1 class="hero-title">
+                        You’ve designed your vision.<br>
+                        Now build the <span class="gold-text">physical capacity</span> to live it.
+                    </h1>
+                    <p class="hero-subtitle">
+                        Most wellness plans fail because they focus only on sets, reps, and calories—ignoring the bigger picture of your life trajectory. We bridge that gap by merging deep Life Visioning methodologies with precision Personal Training & Level 4 Nutrition coaching.
+                    </p>
+                    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <button class="btn-gold" onclick="openModal('General Application')">Apply for Foundation Intake</button>
+                        <a href="#concept" class="btn-outline">Explore The Concept</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="hero-card">
+                        <div class="hero-card-header">
+                            <h3>High-Touch Operational Architecture</h3>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Operating strictly outside regulated financial services to focus entirely on holistic physical vitality.</p>
+                        </div>
+                        <ul class="feature-list" style="margin-bottom: 1rem;">
+                            <li><i class="fa-solid fa-check-circle"></i> Registered Life Planner (RLP) Visioning</li>
+                            <li><i class="fa-solid fa-check-circle"></i> UK Level 3 Personal Training Mechanics</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Level 4 Precision Macro & Metabolic Architecture</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Private Home Studio in Central Scotland</li>
+                        </ul>
+                        <div style="background: rgba(197, 160, 89, 0.08); padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; border-left: 2px solid var(--accent-gold);">
+                            <strong>Client Cap Notice:</strong> Strictly 10 Premium F2F & 25 Hybrid slots maintained to ensure uncompromised client focus.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="concept">
+        <div class="container">
+            <div class="section-header">
+                <span class="gold-text" style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Integrated Blueprint</span>
+                <h2>The Optimum Wellness Method</h2>
+                <p>Aligning deep subconscious human drivers with custom physiological programming.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fa-solid fa-brain card-icon"></i>
+                    <h3>1. Life Vision Architecture</h3>
+                    <p>Leveraging deep, intentional life-planning methodologies to uncover what true personal freedom looks like. We identify subconsciously driven obstacles, stress triggers, and habit disruptions holding your physical energy back.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-dumbbell card-icon"></i>
+                    <h3>2. Level 3 Physical Movement</h3>
+                    <p>Precision movement mechanics tailored to your physical baseline. From strength development to metabolic resilience, sessions are executed in our private Central Scotland studio away from commercial gym distractions.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-utensils card-icon"></i>
+                    <h3>3. Level 4 Nutrition Coaching</h3>
+                    <p>Advanced macronutrient, TDEE, and daily energy targeting. We re-pattern dietary habits, optimize metabolic energy, and eliminate restrictive diet traps to support high cognitive and physical performance.</p>
+                </div>
+            </div>
+
+            <div style="background-color: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 2.5rem; margin-top: 3rem; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: center;">
+                <div>
+                    <span class="gold-text" style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Founder Profile</span>
+                    <h3 style="font-size: 1.5rem; margin: 0.5rem 0;">Meet Your Coach</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Qualified Level 3 Personal Trainer, Level 4 Nutrition Coach, and Registered Life Planner (RLP).</p>
+                </div>
+                <div>
+                    <p style="font-size: 0.95rem;">"My background as an RLP means I excel at helping people uncover their deepest life visions and break through subconscious obstacles holding them back. While operating entirely outside the financial sector to focus purely on holistic health, I bring those same powerful visioning methodologies to your physical well-being."</p>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">"We don't just hand you a generic workout or strict diet. Together, we build a sustainable fitness and nutrition strategy that supports the life you actually want to lead."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="gold-text" style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Modular Coaching Menu</span>
+                <h2>Coaching Architecture & Tiers</h2>
+                <p>Every relationship begins with Module 1 (Foundation Intake) followed by a 6-month minimum retainer under Module 2.</p>
+            </div>
+
+            <!-- Module 1 -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 8px; padding: 2rem; margin-bottom: 3rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <span class="gold-text" style="font-weight: 600; font-size: 0.85rem;">MODULE 1: ENTRY REQUIREMENT</span>
+                        <h3 style="font-size: 1.6rem;">The 90-Minute Foundation Intake</h3>
+                    </div>
+                    <div>
+                        <span style="font-size: 1.8rem; font-weight: 700; color: #fff; font-family: var(--font-heading);">£250</span>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);"> / One-Off Intake Fee</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">A mandatory comprehensive exploration that bridges the gap between your ideal lifestyle and your current physical and nutritional baselines before starting ongoing coaching.</p>
+                
+                <div class="grid-2">
+                    <div style="background: rgba(10,15,18,0.5); padding: 1.25rem; border-radius: 6px;">
+                        <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;"><i class="fa-solid fa-clock"></i> Part 1: Vision & Obstacle Audit (45 Mins)</h4>
+                        <p style="font-size: 0.85rem; margin-bottom: 0;">Deep-dive exploration utilizing life-visioning methodologies to uncover physical freedom goals and identify subconscious behavioral triggers.</p>
+                    </div>
+                    <div style="background: rgba(10,15,18,0.5); padding: 1.25rem; border-radius: 6px;">
+                        <h4 style="color: var(--accent-gold); margin-bottom: 0.5rem;"><i class="fa-solid fa-heart-pulse"></i> Part 2: Physical & Nutritional Assessment (45 Mins)</h4>
+                        <p style="font-size: 0.85rem; margin-bottom: 0;">Hands-on movement screen, joint mobility check, postural review, and Level 4 daily energy/TDEE profiling in our Central Scotland studio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2 Tiers -->
+            <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.4rem;">MODULE 2: ONGOING ACCOUNTABILITY TIERS (6-MONTH MINIMUM)</h3>
+            
+            <div class="grid-2">
+                <!-- Option A -->
+                <div class="card">
+                    <div class="badge-capacity" style="margin-bottom: 0.5rem; width: fit-content;">
+                        <span class="status-dot"></span> Max Capacity: 25 Active Clients
+                    </div>
+                    <h3 style="font-size: 1.4rem; margin-top: 0.5rem;">Option A: The Vitality Alignment</h3>
+                    <p style="font-size: 0.85rem;">Hybrid Face-to-Face & App Coaching for self-motivated clients who value schedule flexibility.</p>
+                    
+                    <div class="tier-price-box">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Month 1 Upfront Total</div>
+                        <div class="price-large">£425</div>
+                        <div style="font-size: 0.8rem; color: var(--accent-gold); margin-top: 0.25rem;">(£250 Intake + £175 Month 1 Retainer)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-main); margin-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.5rem;">
+                            Months 2–6: <strong>£175 / month</strong> (Direct Debit)<br>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Total 6-Month Commitment: £1,300</span>
+                        </div>
+                    </div>
+
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> 1x 60-Min Face-to-Face Studio Session per month</li>
+                        <li><i class="fa-solid fa-check"></i> Full access to private coaching app with video mechanics</li>
+                        <li><i class="fa-solid fa-check"></i> Continuous Level 4 dietary tracking & macro updates</li>
+                        <li><i class="fa-solid fa-check"></i> Mid-month 20-min alignment call for habit troubleshooting</li>
+                        <li><i class="fa-solid fa-check"></i> Asynchronous messenger support</li>
+                    </ul>
+
+                    <button class="btn-gold" style="width: 100%; text-align: center;" onclick="openModal('Option A: Hybrid Vitality')">Apply for Hybrid Tier</button>
+                </div>
+
+                <!-- Option B -->
+                <div class="card" style="border-color: var(--border-strong); background: linear-gradient(180deg, var(--bg-card) 0%, rgba(24,34,40,0.8) 100%);">
+                    <div style="position: absolute; top: -12px; right: 20px; background: var(--accent-gold); color: #0a0f12; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 10px; text-transform: uppercase;">Highest Touch</div>
+                    <div class="badge-capacity" style="margin-bottom: 0.5rem; width: fit-content;">
+                        <span class="status-dot"></span> Strict Cap: 10 Active Clients
+                    </div>
+                    <h3 style="font-size: 1.4rem; margin-top: 0.5rem;">Option B: Premium Peak Capacity</h3>
+                    <p style="font-size: 0.85rem;">Weekly 1-to-1 F2F coaching designed for high-stress executives or major life transitions.</p>
+
+                    <div class="tier-price-box" style="border-color: var(--accent-gold);">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Month 1 Upfront Total</div>
+                        <div class="price-large">£600</div>
+                        <div style="font-size: 0.8rem; color: var(--accent-gold); margin-top: 0.25rem;">(£250 Intake + £350 Month 1 Retainer)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-main); margin-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.5rem;">
+                            Months 2–6: <strong>£350 / month</strong> (Direct Debit)<br>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Total 6-Month Commitment: £2,350</span>
+                        </div>
+                    </div>
+
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> 1x 60-Min Face-to-Face Studio Session EVERY week</li>
+                        <li><i class="fa-solid fa-check"></i> Weekly 15-min Life Vision Check-in prior to training</li>
+                        <li><i class="fa-solid fa-check"></i> Managing cognitive load & stress boundary enforcement</li>
+                        <li><i class="fa-solid fa-check"></i> Real-time Level 4 macro & metabolic biofeedback adjustments</li>
+                        <li><i class="fa-solid fa-check"></i> Priority direct messaging & phone support</li>
+                    </ul>
+
+                    <button class="btn-gold" style="width: 100%; text-align: center;" onclick="openModal('Option B: Premium Peak')">Apply for Premium Tier</button>
+                </div>
+            </div>
+
+            <!-- Rationale Box -->
+            <div id="rationale" class="commitment-box">
+                <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                    <span class="gold-text" style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Long-Term Transformation</span>
+                    <h3>Why We Require a Minimum 6-Month Commitment</h3>
+                    <p style="font-size: 0.9rem;">Quick 30-day fixes produce transient results. To bridge high-level life visioning with lasting physiological changes, true behavioral adaptation requires sustained execution.</p>
+                </div>
+
+                <div class="commitment-grid">
+                    <div class="commitment-item">
+                        <h4>1. Behavioral & Mindset Repatterning</h4>
+                        <p style="font-size: 0.85rem; margin-bottom: 0;">Life Planning techniques dismantle subconscious self-sabotage, emotional eating, and boundary failures. Sustainable habit formation requires navigating real-world stress over 6 full months.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <h4>2. Physiological & Metabolic Adaptation</h4>
+                        <p style="font-size: 0.85rem; margin-bottom: 0;">Neuromuscular adaptation, postural realignment, and metabolic baseline optimization (TDEE balancing) take 12 to 24 weeks of continuous stimulus to lock in permanently.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <h4>3. Autonomous Habit Integration</h4>
+                        <p style="font-size: 0.85rem; margin-bottom: 0;">Our ultimate goal is client self-sufficiency. Six months allows us to transition you from guided coaching to complete autonomy over your energy, fitness, and lifestyle design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-box">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Interactive Investment Calculator</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;">Select a coaching track to view the complete 6-month investment structure.</p>
+
+                <div class="calc-controls">
+                    <div class="calc-btn active" id="btn-opt-a" onclick="selectCalcTier('A')">Option A: Vitality Alignment (Hybrid)</div>
+                    <div class="calc-btn" id="btn-opt-b" onclick="selectCalcTier('B')">Option B: Premium Peak (Weekly F2F)</div>
+                </div>
+
+                <div class="calc-result-grid">
+                    <div>
+                        <div class="result-lbl">Month 1 Upfront</div>
+                        <div class="result-val" id="res-m1">£425</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">Includes £250 Intake</div>
+                    </div>
+                    <div>
+                        <div class="result-lbl">Ongoing Retainer (M2-6)</div>
+                        <div class="result-val" id="res-monthly">£175/mo</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">Direct Debit</div>
+                    </div>
+                    <div>
+                        <div class="result-lbl">Total 6-Month Commitment</div>
+                        <div class="result-val" id="res-total">£1,300</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">Complete Contract</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="disclaimer">
+        <div class="container">
+            <div class="section-header">
+                <span class="gold-text" style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Regulatory Boundaries</span>
+                <h2>Scope of Practice & Compliance</h2>
+                <p>Full transparency regarding our qualifications, boundaries, and UK operational framework.</p>
+            </div>
+
+            <div class="disclaimer-box">
+                <h3>Scope of Service & Professional Disclaimer</h3>
+                
+                <p><strong>1. No Financial Advice or Services:</strong> Although the founder of Optimum Wellness holds the credential of Registered Life Planner (RLP), this business does not operate as a financial adviser, wealth manager, or fiduciary. No part of the services, discussions, interactive tools, or materials provided through this program constitutes financial, investment, legal, or tax advice. You should consult a regulated Financial Conduct Authority (FCA) professional for any financial decisions.</p>
+
+                <p><strong>2. Fitness and Nutrition Scope of Practice:</strong> All fitness coaching, exercise programming, and nutritional guidance are delivered in a qualified capacity as a UK Level 3 Personal Trainer and Level 4 Nutrition coach.</p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><em>Nutritional Guidance:</em> We provide nutritional advice, education, and dietary planning designed to support general health, fitness, and lifestyle goals.</li>
+                    <li><em>Not Medical Advice:</em> We are not Registered Dietitians, Medical Doctors, or Registered Physiotherapists. Our services do not include the medical diagnosis, treatment, or management of any physical injuries, clinical eating disorders, or medical conditions (such as diabetes, renal disease, or gastrointestinal disorders).</li>
+                </ul>
+
+                <p style="margin-bottom: 0;"><strong>3. Client Responsibility and Medical Clearance:</strong> You acknowledge that participating in exercise and altering your diet carries inherent risks. It is your responsibility to ensure you are in good physical health and, where appropriate, to seek medical clearance from your GP before starting any new exercise or nutritional regimen. You agree to disclose all pre-existing medical conditions, injuries, or relevant health histories prior to commencing coaching.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="brand-logo" style="margin-bottom: 1rem;">
+                        <i class="fa-solid fa-compass gold-text"></i> OPTIMUM WELLNESS
+                    </a>
+                    <p style="font-size: 0.8rem; margin-bottom: 0.5rem;">Integrating Registered Life Planning methodologies with Level 3 Fitness & Level 4 Nutrition.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Private Home Studio based in Central Scotland. Operating entirely outside regulated financial services.</p>
+                </div>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 0.9rem;">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#concept">The Concept</a></li>
+                        <li><a href="#services">Service Menu</a></li>
+                        <li><a href="#rationale">6-Month Rationale</a></li>
+                        <li><a href="#disclaimer">Compliance Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 0.9rem;">Legal & Operational</h4>
+                    <ul class="footer-links">
+                        <li><a href="#disclaimer">FCA Non-Financial Notice</a></li>
+                        <li><a href="#disclaimer">Level 3/4 Scope of Practice</a></li>
+                        <li><a href="#disclaimer">Terms & Conditions</a></li>
+                        <li><a href="#disclaimer">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; color: var(--text-muted); font-size: 0.75rem;">
+                © 2026 Optimum Wellness. All Rights Reserved. Strictly For Professional Internal & Client Use.
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="intakeModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div style="margin-bottom: 1.5rem;">
+                <span class="gold-text" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Application Form</span>
+                <h3 style="font-size: 1.6rem;" id="modal-tier-title">Foundation Session Application</h3>
+                <p style="font-size: 0.85rem;">Please complete this pre-session intake to help us understand your vision, hurdles, and physical baseline.</p>
+            </div>
+
+            <div class="alert-box" id="formAlert">
+                <i class="fa-solid fa-check-circle"></i> Application received! We will review your profile and contact you within 24 hours to arrange your Foundation Intake in Central Scotland.
+            </div>
+
+            <form id="intakeForm" onsubmit="handleFormSubmit(event)">
+                <input type="hidden" id="selected-tier-field" value="General Application">
+
+                <!-- Section 1 -->
+                <h4 style="color: var(--accent-gold); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; margin-bottom: 1rem; font-size: 0.95rem;">Section 1: The Bigger Picture (Your Vision)</h4>
+                
+                <div class="form-group">
+                    <label>1. If you woke up tomorrow with boundless physical energy, perfect health, and absolute confidence in your body, what would a perfect day look like for you?</label>
+                    <textarea class="form-control" required placeholder="Describe your ideal daily framework..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>2. What specific life experiences, hobbies, or daily activities are your current fitness or energy levels holding you back from enjoying?</label>
+                    <textarea class="form-control" required placeholder="e.g. Traveling comfortably, playing with children, sustaining energy through long meetings..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Looking ahead 5 to 10 years, what physical capacities (e.g. strength, mobility, stamina) are non-negotiable for the lifestyle you want to lead?</label>
+                    <textarea class="form-control" required></textarea>
+                </div>
+
+                <!-- Section 2 -->
+                <h4 style="color: var(--accent-gold); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; margin-bottom: 1rem; font-size: 0.95rem; margin-top: 2rem;">Section 2: The Hurdles (Your Obstacles)</h4>
+
+                <div class="form-group">
+                    <label>4. What has typically caused your past fitness or nutrition routines to fall off track? (e.g., work stress, lack of time, emotional eating)</label>
+                    <textarea class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>5. Describe your current relationship with food in three words.</label>
+                    <input type="text" class="form-control" placeholder="e.g. Stressful, Unfocused, Inconsistent" required>
+                </div>
+
+                <div class="form-group">
+                    <label>6. How does your current career or daily routine impact your health habits? (e.g., long hours sitting, skipping lunch, high cognitive stress)</label>
+                    <textarea class="form-control" required></textarea>
+                </div>
+
+                <!-- Section 3 -->
+                <h4 style="color: var(--accent-gold); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; margin-bottom: 1rem; font-size: 0.95rem; margin-top: 2rem;">Section 3: Contact & Commitment Confirmation</h4>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" required placeholder="john@example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">
+                        <input type="checkbox" required style="margin-top: 0.2rem;">
+                        I acknowledge that coaching requires a minimum 6-month commitment following the £250 Foundation Intake, and that Optimum Wellness operates strictly outside FCA regulated financial advice.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-gold" style="width: 100%; margin-top: 1rem;">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(tierName) {
+            const modal = document.getElementById('intakeModal');
+            const title = document.getElementById('modal-tier-title');
+            const hiddenField = document.getElementById('selected-tier-field');
+            const alertBox = document.getElementById('formAlert');
+            const form = document.getElementById('intakeForm');
+            
+            alertBox.style.display = 'none';
+            form.style.display = 'block';
+
+            if (tierName) {
+                title.innerText = `Application for ${tierName}`;
+                hiddenField.value = tierName;
+            } else {
+                title.innerText = "Foundation Session Application";
+                hiddenField.value = "General Application";
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('intakeModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('intakeModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function selectCalcTier(tier) {
+            const btnA = document.getElementById('btn-opt-a');
+            const btnB = document.getElementById('btn-opt-b');
+            const resM1 = document.getElementById('res-m1');
+            const resMonthly = document.getElementById('res-monthly');
+            const resTotal = document.getElementById('res-total');
+
+            if (tier === 'A') {
+                btnA.classList.add('active');
+                btnB.classList.remove('active');
+                resM1.innerText = '£425';
+                resMonthly.innerText = '£175/mo';
+                resTotal.innerText = '£1,300';
+            } else {
+                btnB.classList.add('active');
+                btnA.classList.remove('active');
+                resM1.innerText = '£600';
+                resMonthly.innerText = '£350/mo';
+                resTotal.innerText = '£2,350';
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('formAlert');
+            const form = document.getElementById('intakeForm');
+            
+            form.style.display = 'none';
+            alertBox.style.display = 'block';
+
+            setTimeout(() => {
+                closeModal();
+                form.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
